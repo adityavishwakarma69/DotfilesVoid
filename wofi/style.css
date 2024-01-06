@@ -1,0 +1,41 @@
+@import "/home/aditya/.cache/wal/colors-gtk.css";
+
+*{
+	box-shadow: none;
+	outline-color: none;
+}
+
+window{
+	font-family: ProFont IIx Nerd Font;
+	font-size: 13;
+	font-weight: bold;
+	background-color: @background-alpha;
+	color: @foreground;
+	border-radius: 10px;
+	border: 2px solid @color15;
+}
+
+#entry{
+	padding : 3px 0px;
+	outline: none;
+	margin: 0px 5px;
+}
+
+#entry:selected{
+	background-color: @foreground;
+	color: @background;
+	border-radius: 6px;
+}
+
+#text:selected{
+	color: @background;
+}
+
+#input{
+	background-color: @background;
+	color: @foreground;
+	border: none;
+	border-radius: 10;
+	margin: 5px 5px;
+}
+
