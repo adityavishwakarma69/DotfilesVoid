@@ -11,8 +11,7 @@ window{
 	font-weight: bold;
 	background-color: @background-alpha;
 	color: @foreground;
-	border-radius: 10px;
-	border: 2px solid @color15;
+	border-radius: 5px;
 }
 
 #entry{

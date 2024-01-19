@@ -6,8 +6,8 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["custom/wofi", "sway/workspaces", "sway/mode", "sway/scratchpad", "sway/window", "custom/media"],
-    "modules-center": [],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "temperature", "backlight", "battery", "clock", "tray", "custom/noti"],
+    "modules-center": ["tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "temperature", "backlight", "battery", "clock", "custom/noti"],
     // Modules configuration
     
     "sway/window": {

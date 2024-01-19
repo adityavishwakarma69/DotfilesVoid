@@ -1,9 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ###PYWAL
 include "$HOME/.cache/wal/colors-sway"
 
@@ -14,7 +8,7 @@ output eDP-1 scale 1.50
 font pango: ProFont IIx Nerd Font 12
 
 ##Gaps
-gaps inner 5px
+gaps inner 10px
 gaps outer 10px
 
 ### Variables
@@ -233,7 +227,6 @@ bindsym XF86MonBrightnessDown exec brightnessctl s -5%
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-exec dbus-launch pipewire 
 bar {
     #position top
 
@@ -263,13 +256,13 @@ client.urgent               $color10 $color10  $color0 $color10
 
 ## SWAYFX
 #corner
-corner_radius 10
+corner_radius 5
 smart_corner_radius on
 #shadows
 shadows on
-shadow_color $color15
+shadow_color $color0
 shadow_blur_radius 20
-default_dim_inactive 0.1
+default_dim_inactive 0
 
 #blur
 blur enable
@@ -278,7 +271,7 @@ blur_radius 4
 
 #layers
 layer_effects "waybar" blur enable; shadows enable
-layer_effects "wofi" blur enable; corner_radius 10
+layer_effects "wofi" blur enable; corner_radius 5
 layer_effects "swaync-control-center" blur enable
 layer_effects "swaync-notification-window" blur disable
 
@@ -288,7 +281,9 @@ layer_effects "swaync-notification-window" blur disable
 include /etc/sway/config.d/*
 
 ##Autostart
-
+exec dbus-launch pipewire 
 exec autotiling
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 exec swaync
+
+seat * xcursor_theme Adwaita 26
