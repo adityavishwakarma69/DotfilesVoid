@@ -187,6 +187,7 @@
 
 .control-center {
   background: @cc-bg;
+  border-radius: 5px;
 }
 
 .control-center-list {
@@ -210,8 +211,10 @@
 
 /* Title widget */
 .widget-title {
-  margin: 8px;
-  font-size: 1.5rem;
+  margin: 5px 20px;
+  margin-top: 10px;
+  font-size: 1.25rem;
+  color: @text-color;
 }
 .widget-title > button {
   font-size: initial;
@@ -228,7 +231,8 @@
 
 /* DND widget */
 .widget-dnd {
-  margin: 8px;
+  color: @color15;
+  margin: 5px 20px;
   font-size: 1.1rem;
 }
 .widget-dnd > switch {

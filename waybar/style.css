@@ -12,6 +12,7 @@ window#waybar {
     color: @color14;
     transition-property: background-color;
     transition-duration: .5s;
+    border-radius: 5px;
 }
 
 window#waybar.hidden {
@@ -31,11 +32,6 @@ window#waybar.termite {
     background-color: #3F3F3F;
 }
 
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
 button {
     /* Use box-shadow instead of border so the text isn't offset */
     /* Avoid rounded borders under each button name */
@@ -50,26 +46,24 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    color: @color15;
+    color: alpha(@color15, 0.7);
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    border-bottom: 2px solid @foreground;
+    color: @color15;
 
 }
 
 #workspaces button.focused {
-    border-bottom: 2px solid @foreground;
+    color: @color15;
 }
 
 #workspaces button.urgent {
-	border-bottom: 2px solid @color10;
+    color: @color9;
 }
 
 #mode {
     background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
 }
 
 #clock,
@@ -109,17 +103,14 @@ button:hover {
 
 #clock {
     color: @color15;
-    border-bottom: 2px solid @color15;
 }
 
 #battery {
     color: @color14;
-    border-bottom: 2px solid @color14;
 }
 
 #battery.charging, #battery.plugged {
     color: @color14;
-    border-bottom: 2px solid @color14;
 }
 
 @keyframes blink {
@@ -145,7 +136,6 @@ label:focus {
 
 #cpu {
     color: @color14;
-    border-bottom: 2px solid @color14;
 }
 
 #memory {
@@ -158,12 +148,10 @@ label:focus {
 
 #backlight {
     color: @color13;
-    border-bottom: 2px solid @color13;
 }
 
 #network {
     color: @color12;
-    border-bottom: 2px solid @color12;
 }
 
 #network.disconnected {
@@ -171,12 +159,10 @@ label:focus {
 
 #pulseaudio {
     color: @color11;
-    border-bottom: 2px solid @color11;
 }
 
 #pulseaudio.muted {
     color: @color15;
-    border-bottom: 2px solid @color15;
 }
 
 #wireplumber {
@@ -204,12 +190,10 @@ label:focus {
 
 #temperature {
     color: @color12;
-    border-bottom: 2px solid @color12;
 }
 
 #temperature.critical { 
     color: @color15;
-    border-bottom: 2px solid @color15;
 }
 
 #tray {
@@ -227,12 +211,10 @@ label:focus {
 
 #idle_inhibitor {
     color: @color10;
-    border-bottom: 2px solid @color10;
 }
 
 #idle_inhibitor.activated {
     color: @color15;
-    border-bottom: 2px solid @color15;
 }
 
 #mpd {
@@ -287,9 +269,11 @@ label:focus {
 #custom-wofi {
 	color: @foreground;
 	padding: 0px 0px 0px 4px;
+	margin: 0px 5px;
 }
 
 #custom-noti {
 	color: @foreground;
 	padding: 0px 7px 0px 6px;
+	margin: 0px 5px;
 }
