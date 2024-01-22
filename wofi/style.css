@@ -28,10 +28,15 @@ window{
 
 #text:selected{
 	color: @background;
+	background: transparent;
+}
+
+#img{
+	background: transparent;
 }
 
 #input{
-	background-color: @background;
+	background-color: transparent;
 	color: @foreground;
 	border: none;
 	border-radius: 10;

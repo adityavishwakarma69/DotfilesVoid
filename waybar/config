@@ -156,7 +156,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
         },
         "on-click-right": "pavucontrol",
 	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"

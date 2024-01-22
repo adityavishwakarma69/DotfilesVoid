@@ -259,7 +259,7 @@ label:focus {
 }
 
 #scratchpad {
-    background: rgba(0, 0, 0, 0.2);
+	color: @color15;
 }
 
 #scratchpad.empty {
