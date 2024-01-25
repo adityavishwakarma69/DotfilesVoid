@@ -32,7 +32,8 @@ set $menu /home/aditya/.local/share/scripts/runwofi
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/aditya/.local/share/bg fill
+#output * bg /home/aditya/.local/share/bg fill
+exec swww init && swww img /home/aditya/.local/share/bg
 #
 # Example configuration:
 #
@@ -246,7 +247,7 @@ bar {
 }
 ## BORDER
 default_border pixel 2
-default_floating_border pixel 2
+default_floating_border pixel 0
 
 
 ## COLORS
@@ -259,7 +260,7 @@ client.urgent               $color10 $color10  $color0 $color10
 ## SWAYFX
 #corner
 corner_radius 5
-smart_corner_radius on
+smart_corner_radius off
 #shadows
 shadows on
 shadow_color $color0
