@@ -29,14 +29,14 @@
   "hide-on-action": true,
   "script-fail-notify": true,
   "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
+    "sound-script": {
+      "exec": "/home/aditya/.local/share/scripts/play-notify-sound"
     },
     "example-action-script": {
-      "exec": "echo 'Do something actionable!'",
+      "exec": "xdg-open /home/aditya/Pictures/Screenshots",
       "urgency": "Normal",
-      "run-on": "action"
+      "run-on": "action",
+      "app-name": "screenshot"
     }
   },
   "notification-visibility": {

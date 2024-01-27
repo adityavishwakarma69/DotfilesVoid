@@ -15,7 +15,9 @@
     // Modules configuration
     
     "sway/window": {
-	"max-length": 30
+	"max-length": 30,
+	"icon": true,
+	"icon-size": 20
     },
     "sway/workspaces": {
 	    "disable-scroll": true,
@@ -93,7 +95,7 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%d %A}</big>\n<big><tt>{calendar}</tt></big>",
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
@@ -136,12 +138,12 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ",
+        "format-wifi": "{signalStrength}% ",
         "format-ethernet": "{ipaddr}/{cidr}",
-        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format": "{ifname}: {essid} via {gwaddr}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {essid}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

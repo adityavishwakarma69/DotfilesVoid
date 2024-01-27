@@ -12,16 +12,25 @@ button {
 	border-style: solid;
 	border-width: 2px;
 	border-color: @background-alpha;
+	border-radius: 5px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 15%;
 	margin: 10px;
+	transition: 0.3s;
 }
 
 button:focus, button:active, button:hover {
 	outline-style: none;
-	border: 3px solid @color15;
+	border: 2px solid @color15;
+	background-size: 18%;
+	font-weight: bold;
 }
+
+button:hover{
+	border: 2px solid alpha(@color15, 0.7);
+}
+
 
 #lock {
     background-image: image(url("/home/aditya/.cache/wlogout/icons/icon-1.png"));
@@ -37,6 +46,7 @@ button:focus, button:active, button:hover {
 
 #hibernate {
     background-image: image(url("/home/aditya/.cache/wlogout/icons/icon-0.png"));
+    background-size: 20%;
 }
 
 #shutdown {

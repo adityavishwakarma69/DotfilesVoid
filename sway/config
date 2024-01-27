@@ -8,8 +8,8 @@ output eDP-1 scale 1.50
 font pango: ProFont IIx Nerd Font 12
 
 ##Gaps
-gaps inner 10px
-gaps outer 10px
+gaps inner 8px
+gaps outer 8px
 
 ### Variables
 #
@@ -99,7 +99,7 @@ input "type:pointer" accel_profile flat
     # Reload the configuration file
     bindsym $mod+Shift+r reload
     
-    bindsym PRINT exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +"SCREENSHOT-%d-%m-%y_%H_%M_%S.png")
+    bindsym PRINT exec /home/aditya/.local/share/scripts/screenshot
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -290,5 +290,7 @@ exec pipewire
 exec autotiling
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 exec swaync
-
+exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' timeout 400 '/home/aditya/.local/share/scripts/lockscreen' timeout 600 'swaymsg "output * dpms on" & loginctl suspend'
+exec mpd
+exec mpDris2
 seat * xcursor_theme Adwaita 26

@@ -1,18 +1,18 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "/home/aditya/.local/share/scripts/lockscreen",
     "text" : "Lock",
     "keybind" : "l"
 }
 {
     "label" : "hibernate",
-    "action" : "loginctl hibernate",
-    "text" : "Hibernate",
+    "action" : "swaymsg reload",
+    "text" : "Reload",
     "keybind" : "h"
 }
 {
     "label" : "logout",
-    "action" : "swaymsg exit",
+    "action" : "pkill pipewire && swaymsg exit || swaymsg exit",
     "text" : "Logout",
     "keybind" : "e"
 }
