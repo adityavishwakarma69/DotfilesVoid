@@ -82,7 +82,6 @@ input "type:pointer" accel_profile flat
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+Shift+d exec nwggrid
     bindsym $mod+Shift+e exec wlogout -p layer-shell
     
     # Sway Nc
@@ -99,7 +98,7 @@ input "type:pointer" accel_profile flat
     # Reload the configuration file
     bindsym $mod+Shift+r reload
     
-    bindsym PRINT exec /home/aditya/.local/share/scripts/screenshot
+    bindsym $mod+PRINT exec /home/aditya/.local/share/scripts/screenshot
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -223,8 +222,8 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-bindsym XF86MonBrightnessUp exec brightnessctl s +5%
-bindsym XF86MonBrightnessDown exec brightnessctl s -5%
+bindsym XF86MonBrightnessUp exec brightnessctl s 2%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 2%-
 
 #
 # Status Bar:
@@ -290,7 +289,6 @@ exec pipewire
 exec autotiling
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 exec swaync
-exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' timeout 400 '/home/aditya/.local/share/scripts/lockscreen' timeout 600 'swaymsg "output * dpms on" & loginctl suspend'
+exec swayidle -w timeout 300 '/home/aditya/.local/share/scripts/lockscreen -i && swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' timeout 400 '/home/aditya/.local/share/scripts/lockscreen -l' timeout 600 'swaymsg "output * dpms on" & loginctl suspend'
 exec mpd
-exec mpDris2
 seat * xcursor_theme Adwaita 26
