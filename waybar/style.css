@@ -51,7 +51,7 @@ button:hover {
 
 #workspaces button:hover {
     color: @color15;
-
+    margin: 0 5px;
 }
 
 #workspaces button.focused {

@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "/home/aditya/.local/share/scripts/lockscreen",
+    "action" : "/home/aditya/.local/share/scripts/locksway -i -l",
     "text" : "Lock",
     "keybind" : "l"
 }

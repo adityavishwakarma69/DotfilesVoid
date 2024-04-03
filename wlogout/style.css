@@ -46,7 +46,6 @@ button:hover{
 
 #hibernate {
     background-image: image(url("/home/aditya/.cache/wlogout/icons/icon-0.png"));
-    background-size: 20%;
 }
 
 #shutdown {

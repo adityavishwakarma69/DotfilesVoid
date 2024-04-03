@@ -7,11 +7,11 @@
     "margin-left" : 4,    
     "margin-top" : 4,
     "padding-left": 10,
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 1, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["custom/wofi", "sway/workspaces", "sway/mode", "sway/scratchpad", "sway/window", "custom/media"],
-    "modules-center": ["tray"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "temperature", "backlight", "battery", "clock", "custom/noti"],
+    "modules-center": ["clock", "custom/noti"],
+    "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "network", "temperature", "backlight", "battery"],
     // Modules configuration
     
     "sway/window": {
@@ -125,9 +125,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{capacity}% {icon} ",
+        "format-charging": "{capacity}%  ",
+        "format-plugged": "{capacity}%  ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -148,13 +148,13 @@
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {format_source}% {icon}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": "M ",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󱡏",
+            "headset": "󱡏",
             "phone": "",
             "portable": "",
             "car": "",
@@ -178,7 +178,7 @@
 
     "custom/wofi": {
 	"format": "",
-	"on-click": "/home/aditya/.local/share/scripts/runwofi",
+	"on-click": "/home/aditya/.local/share/scripts/runtofi",
 	"tooltip": false
     },
     "custom/noti": {

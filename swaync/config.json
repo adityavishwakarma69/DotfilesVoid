@@ -1,7 +1,7 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "positionX": "right",
-  "positionY": "bottom",
+  "positionX": "center",
+  "positionY": "top",
   "layer": "overlay",
   "control-center-layer": "top",
   "layer-shell": true,
@@ -18,7 +18,7 @@
   "timeout": 10,
   "timeout-low": 5,
   "timeout-critical": 0,
-  "fit-to-screen": true,
+  "fit-to-screen": false,
   "control-center-width": 500,
   "control-center-height": 600,
   "notification-window-width": 500,
@@ -51,7 +51,6 @@
     "title",
     "dnd",
     "notifications",
-    "mpris",
     "volume"
   ],
   "widget-config": {
@@ -63,7 +62,7 @@
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear All"
+      "button-text": "Clear"
     },
     "dnd": {
       "text": "Do Not Disturb"

@@ -247,7 +247,7 @@
 }
 .widget-dnd > switch slider {
   background: @noti-bg-hover;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 /* Label widget */

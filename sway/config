@@ -2,7 +2,7 @@
 include "$HOME/.cache/wal/colors-sway"
 
 ###Scale
-output eDP-1 scale 1.50
+output eDP-1 scale 1.5
 
 ##Font
 font pango: ProFont IIx Nerd Font 12
@@ -23,6 +23,7 @@ set $right l
 # Your preferred terminal emulator
 #set $term alacritty
 set $term foot
+set $inode thunar
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -32,8 +33,8 @@ set $menu /home/aditya/.local/share/scripts/runwofi
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /home/aditya/.local/share/bg fill
-exec swww init && swww img /home/aditya/.local/share/bg
+output * bg /home/aditya/.local/share/bg fill
+#exec swww init && swww img /home/aditya/.local/share/bg
 #
 # Example configuration:
 #
@@ -83,9 +84,11 @@ input "type:pointer" accel_profile flat
     # Start your launcher
     bindsym $mod+d exec $menu
     bindsym $mod+Shift+e exec wlogout -p layer-shell
+    bindsym $mod+c exec /home/aditya/.local/share/scripts/tofipctl
     
     # Sway Nc
     bindsym $mod+n exec swaync-client -t -sw
+
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -262,8 +265,8 @@ corner_radius 5
 smart_corner_radius off
 #shadows
 shadows on
-shadow_color $color0
-shadow_blur_radius 20
+shadow_color $color15
+shadow_blur_radius 7
 default_dim_inactive 0
 
 #blur
@@ -273,10 +276,10 @@ blur_radius 4
 
 #layers
 layer_effects "waybar" blur enable; shadows enable, corner_radius 5
-layer_effects "wofi" blur enable; corner_radius 5
-layer_effects "swaync-control-center" blur enable
-layer_effects "swaync-notification-window" blur disable
-layer_effects "gtk-layer-shell" blur enable
+layer_effects "wofi" blur enable; corner_radius 5; shadows enable
+layer_effects "swaync-control-center" blur enable; shadows enable
+layer_effects "swaync-notification-window" blur disable; shadows disable
+layer_effects "gtk-layer-shell" blur enable; shadows enable; corner_radius 5
 
 
 # Sway autoexec
@@ -289,6 +292,6 @@ exec pipewire
 exec autotiling
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 exec swaync
-exec swayidle -w timeout 300 '/home/aditya/.local/share/scripts/lockscreen -i && swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' timeout 400 '/home/aditya/.local/share/scripts/lockscreen -l' timeout 600 'swaymsg "output * dpms on" & loginctl suspend'
-exec mpd
-seat * xcursor_theme Adwaita 26
+exec swayidle -w timeout 180 '/home/aditya/.local/share/scripts/dim on' resume '/home/aditya/.local/share/scripts/dim off' timeout 360 '/home/aditya/.local/share/scripts/locksway -i && swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on" && /home/aditya/.local/share/scripts/locksway -l' timeout 1200 'loginctl suspend'
+exec mpd && mpDris2
+#seat * xcursor_theme Adwaita 26
