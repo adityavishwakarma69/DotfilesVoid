@@ -1,7 +1,7 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
-  "positionX": "center",
-  "positionY": "top",
+  "positionX": "right",
+  "positionY": "bottom",
   "layer": "overlay",
   "control-center-layer": "top",
   "layer-shell": true,
@@ -18,7 +18,7 @@
   "timeout": 10,
   "timeout-low": 5,
   "timeout-critical": 0,
-  "fit-to-screen": false,
+  "fit-to-screen": true,
   "control-center-width": 500,
   "control-center-height": 600,
   "notification-window-width": 500,
@@ -29,10 +29,15 @@
   "hide-on-action": true,
   "script-fail-notify": true,
   "scripts": {
-    "sound-script": {
-      "exec": "/home/aditya/.local/share/scripts/play-notify-sound"
+    "sound-script-normal": {
+      "exec": "/home/aditya/.local/share/scripts/play-notify-sound",
+      "urgency": "Normal"
     },
-    "example-action-script": {
+    "sound-script-critical": {
+      "exec": "/home/aditya/.local/share/scripts/play-notify-sound",
+      "urgency": "Critical"
+    },
+    "screenshot-action-script": {
       "exec": "xdg-open /home/aditya/Pictures/Screenshots",
       "urgency": "Normal",
       "run-on": "action",
@@ -62,10 +67,10 @@
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear"
+      "button-text": "X"
     },
     "dnd": {
-      "text": "Do Not Disturb"
+      "text": "DND"
     },
     "label": {
       "max-lines": 5,

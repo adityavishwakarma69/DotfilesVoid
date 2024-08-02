@@ -7,44 +7,25 @@
     "margin-left" : 4,    
     "margin-top" : 4,
     "padding-left": 10,
-    "spacing": 1, // Gaps between modules (4px)
+    "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/wofi", "sway/workspaces", "sway/mode", "sway/scratchpad", "sway/window", "custom/media"],
+    "modules-left": ["custom/wofi", "hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock", "custom/noti"],
     "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "network", "temperature", "backlight", "battery"],
     // Modules configuration
     
-    "sway/window": {
+    "hyprland/window": {
 	"max-length": 30,
 	"icon": true,
 	"icon-size": 20
     },
-    "sway/workspaces": {
+    "hyprland/workspaces": {
 	    "disable-scroll": true,
 	    "all-outputs": true,
 	    "warp-on-scroll": false,
 	    "format": "{icon}",
-	    "format-icons": {
-		    "1": "1",
-		    "2": "2",
-		    "3": "3",
-		    "4": "4",
-		    "5": "5",
-		    "6": "6",
-		    "7": "7",
-		    "8": "8",
-		    "9": "9",
-		    "10": "10"
-	    }
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+	    "format-icons": {}
+
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -55,32 +36,6 @@
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -94,16 +49,9 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
+        // "timezone": "Asia/Kolkata",
         "tooltip-format": "<big>{:%d %A}</big>\n<big><tt>{calendar}</tt></big>",
         "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -163,22 +111,11 @@
         "on-click-right": "pavucontrol",
 	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
 
     "custom/wofi": {
 	"format": "",
-	"on-click": "/home/aditya/.local/share/scripts/runtofi",
+	"on-click": "/home/aditya/.local/share/scripts/runwofi",
+	"on-click-right": "/home/aditya/.local/share/scripts/update",
 	"tooltip": false
     },
     "custom/noti": {

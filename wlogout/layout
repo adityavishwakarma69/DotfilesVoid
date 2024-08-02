@@ -6,13 +6,13 @@
 }
 {
     "label" : "hibernate",
-    "action" : "swaymsg reload",
+    "action" : "hyprctl reload",
     "text" : "Reload",
     "keybind" : "h"
 }
 {
     "label" : "logout",
-    "action" : "pkill pipewire && swaymsg exit || swaymsg exit",
+    "action" : "pkill -u $USER",
     "text" : "Logout",
     "keybind" : "e"
 }
@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "loginctl suspend",
+    "action" : "/home/aditya/.local/share/scripts/locksway -i -l & loginctl suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }

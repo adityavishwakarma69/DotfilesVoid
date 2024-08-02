@@ -8,18 +8,11 @@
 }
 
 window#waybar {
-    background-color: transparent;
+    background-color: @background-alpha;
     color: @color14;
     transition-property: background-color;
     transition-duration: .5s;
-    border-radius: 7px;
-}
-
-.modules-right, .modules-left, .modules-center{
-	background: linear-gradient(@background, @background) padding-box,
-              linear-gradient(to right, @color15, @color10) border-box;
-	border-radius: 7px;
-  	border: 2px solid transparent;
+    border-radius: 5px;
 }
 
 window#waybar.hidden {
@@ -67,10 +60,6 @@ button:hover {
 
 #workspaces button.urgent {
     color: @color9;
-}
-
-#workspaces button.active {
-    color: @color15;
 }
 
 #mode {
@@ -288,4 +277,3 @@ label:focus {
 	padding: 0px 7px 0px 6px;
 	margin: 0px 5px;
 }
-

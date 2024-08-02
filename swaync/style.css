@@ -18,6 +18,10 @@
 
 @define-color bg-selected @color1;
 
+*{
+	outline: none;
+}
+
 .notification-row {
   outline: none;
 }
@@ -321,7 +325,7 @@
 /* Volume widget */
 
 .widget-volume {
-  background-color: @noti-bg;
+  background-color: transparent;
   padding: 8px;
   margin: 8px;
   border-radius: 12px;

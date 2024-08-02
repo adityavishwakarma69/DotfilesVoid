@@ -12,6 +12,7 @@ window{
 	background-color: @background-alpha;
 	color: @foreground;
 	border-radius: 5px;
+	border: 2px solid @foreground;
 }
 
 #entry{

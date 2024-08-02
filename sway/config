@@ -2,7 +2,7 @@
 include "$HOME/.cache/wal/colors-sway"
 
 ###Scale
-output eDP-1 scale 1.5
+output eDP-1 scale 1.25
 
 ##Font
 font pango: ProFont IIx Nerd Font 12
@@ -88,7 +88,9 @@ input "type:pointer" accel_profile flat
     
     # Sway Nc
     bindsym $mod+n exec swaync-client -t -sw
-
+    
+    #Wallpaper
+    bindsym $mod+Shift+w exec /home/aditya/.local/share/scripts/wofi-wall    
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -275,7 +277,7 @@ blur_passes 2
 blur_radius 4
 
 #layers
-layer_effects "waybar" blur enable; shadows enable, corner_radius 5
+layer_effects "waybar" blur enable; shadows enable; corner_radius 5; blur_ignore_transparent enable
 layer_effects "wofi" blur enable; corner_radius 5; shadows enable
 layer_effects "swaync-control-center" blur enable; shadows enable
 layer_effects "swaync-notification-window" blur disable; shadows disable
@@ -292,6 +294,7 @@ exec pipewire
 exec autotiling
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 exec swaync
-exec swayidle -w timeout 180 '/home/aditya/.local/share/scripts/dim on' resume '/home/aditya/.local/share/scripts/dim off' timeout 360 '/home/aditya/.local/share/scripts/locksway -i && swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on" && /home/aditya/.local/share/scripts/locksway -l' timeout 1200 'loginctl suspend'
+exec swayidle -w timeout 180 '/home/aditya/.local/share/scripts/dim on' resume '/home/aditya/.local/share/scripts/dim off' timeout 360 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 exec mpd && mpDris2
+exec /home/aditya/.config/sway/autoexec
 #seat * xcursor_theme Adwaita 26
