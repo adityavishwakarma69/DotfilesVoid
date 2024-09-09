@@ -10,8 +10,8 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["custom/wofi", "hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock", "custom/noti"],
-    "modules-right": ["tray", "idle_inhibitor", "pulseaudio", "network", "temperature", "backlight", "battery"],
+    "modules-center": ["idle_inhibitor", "clock", "custom/noti"],
+    "modules-right": ["tray", "pulseaudio", "network", "temperature", "backlight", "battery"],
     // Modules configuration
     
     "hyprland/window": {

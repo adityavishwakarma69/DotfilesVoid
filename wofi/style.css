@@ -3,16 +3,17 @@
 *{
 	box-shadow: none;
 	outline-color: none;
+	font-family: ProFont IIx Nerd Font;
 }
 
 window{
-	font-family: ProFont IIx Nerd Font;
 	font-size: 13;
 	font-weight: bold;
-	background-color: @background-alpha;
 	color: @foreground;
-	border-radius: 5px;
-	border: 2px solid @foreground;
+	background: linear-gradient(@background, @background) padding-box,
+              linear-gradient(to bottom right, @color15, @color10) border-box;
+        border-radius: 7px;
+        border: 2px solid transparent;
 }
 
 #entry{

@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "/home/aditya/.local/share/scripts/locksway -i -l",
+    "action" : "loginctl lock-session",
     "text" : "Lock",
     "keybind" : "l"
 }
@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "/home/aditya/.local/share/scripts/locksway -i -l & loginctl suspend",
+    "action" : "loginctl suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }
